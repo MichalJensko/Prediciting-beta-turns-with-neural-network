@@ -1,4 +1,3 @@
-import os
 import tomli
 import pathlib
 
@@ -19,12 +18,11 @@ def parse_config():
 
 
 def create_workspace_directories(config_paths):
-    cwd = os.getcwd()
+    path = pathlib.Path(__file__).parents[1]
 
     for key in config_paths.keys():
-        directory = os.path.join(cwd, config_paths[key])
-        if not os.path.exists(directory):
-            os.mkdir(directory)
+        directory = path.joinpath(config_paths[key])
+        directory.mkdir(parents=False, exist_ok=True)
 
 
 def init_config():
