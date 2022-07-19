@@ -9,6 +9,7 @@ python = "^3.10"
 toml = "^0.10.2"
 tomli = "^2.0.1"
 requests = "^2.28.1"
+pathlib = "^1.0.1"
 
 
 [tool.poetry.dev-dependencies]
@@ -16,7 +17,3 @@ requests = "^2.28.1"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[paths]
-pdb_files = "./pdb_files"
-register = "./register"
