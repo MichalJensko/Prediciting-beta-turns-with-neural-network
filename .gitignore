@@ -1,1 +1,7 @@
 
+
+pdb_parser/pdb_codes.txt
+
+*.pdb
+
+pdb_parser/register/register.txt
