@@ -4,7 +4,7 @@ import config
 
 def main():
     paths = config.init_config()
-    fd.get_pdb_files(fd.listing_codes('pdb_codes.txt'), paths['pdb_files'])
+    fd.get_pdb_files(fd.listing_codes('pdb_codes.txt', paths), paths)
 
 
 if __name__ == '__main__':
