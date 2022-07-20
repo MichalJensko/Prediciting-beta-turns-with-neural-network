@@ -1,4 +1,12 @@
 
+<<<<<<< Updated upstream
 *.pdb
 
 pdb_parser/pdb_codes.txt
+=======
+pdb_parser/pdb_codes.txt
+
+*.pdb
+
+pdb_parser/register/register.txt
+>>>>>>> Stashed changes
