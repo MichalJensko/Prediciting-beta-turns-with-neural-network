@@ -2,11 +2,18 @@ import tomli
 import pathlib
 
 
-def parse_config():
+class MissingConfigFile(Exception):
+    pass
+
+
+def parse_config(config_file="pdb_parser.toml"):
 
     paths = {}
     path = pathlib.Path(__file__).parent
-    path = path.joinpath("pdb_parser.toml")
+    path = path.joinpath(config_file)
+
+    if not path.is_file():
+        raise MissingConfigFile
 
     with path.open(mode="rb") as c_file:
         config = tomli.load(c_file)
