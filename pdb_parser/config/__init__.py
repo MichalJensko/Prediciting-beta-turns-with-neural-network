@@ -2,48 +2,18 @@ import tomli
 import pathlib
 
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 class MissingConfigFile(Exception):
     pass
 
 
-=======
->>>>>>> Stashed changes
 def parse_config(config_file="pdb_parser.toml"):
 
     paths = {}
     path = pathlib.Path(__file__).parent
-=======
-def parse_config():
-
-    paths = {}
-    path = pathlib.Path(__file__).parent
-    path = path.joinpath("pdb_parser.toml")
-=======
-<<<<<<< Updated upstream
-class MissingConfigFile(Exception):
-    pass
-
-
-=======
->>>>>>> Stashed changes
-def parse_config(config_file="pdb_parser.toml"):
-
-    paths = {}
-    path = pathlib.Path(__file__).parent
->>>>>>> Stashed changes
     path = path.joinpath(config_file)
-<<<<<<< Updated upstream
 
     if not path.is_file():
         raise MissingConfigFile
-=======
->>>>>>> Stashed changes
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
     with path.open(mode="rb") as c_file:
         config = tomli.load(c_file)
