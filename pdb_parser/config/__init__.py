@@ -15,7 +15,6 @@ def parse_config(config_file="pdb_parser.toml"):
     if not path.is_file():
         raise MissingConfigFile
 
-
     with path.open(mode="rb") as c_file:
         config = tomli.load(c_file)
 
