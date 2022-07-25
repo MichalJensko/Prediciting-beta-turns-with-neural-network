@@ -32,7 +32,7 @@ def create_workspace_directories(config_paths):
         directory.mkdir(parents=False, exist_ok=True)
 
 
-def init_config():
-    paths = parse_config()
+def init_config(config_file="pdb_parser.toml"):
+    paths = parse_config(config_file)
     create_workspace_directories(paths)
     return paths
