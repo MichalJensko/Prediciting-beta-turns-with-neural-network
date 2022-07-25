@@ -2,10 +2,11 @@ import requests
 import pathlib
 
 
-def listing_codes(list_of_codes, paths):
+def listing_codes(list_of_codes, paths, error_file='register.txt'):
+
     pdb_codes = []
     errors = pathlib.Path(__file__).parent
-    errors = errors.joinpath(errors, paths['register'], 'register.txt')
+    errors = errors.joinpath(errors, paths['register'], error_file)
 
     with open(list_of_codes, 'r') as listing:
 
@@ -22,9 +23,10 @@ def listing_codes(list_of_codes, paths):
     return pdb_codes
 
 
-def get_pdb_files(pdb_codes, paths):
+def get_pdb_files(pdb_codes, paths, error_file='register.txt'):
+
     errors = pathlib.Path(__file__).parent
-    errors = errors.joinpath(errors, paths['register'], 'register.txt')
+    errors = errors.joinpath(errors, paths['register'], error_file)
     pdb_files = pathlib.Path(__file__).parent
     pdb_files = pdb_files.joinpath(paths['pdb_files'])
 
@@ -35,5 +37,5 @@ def get_pdb_files(pdb_codes, paths):
 
             open(pdb_files.joinpath(f'{code}.pdb'), 'wb').write(request.content)
         else:
-            with errors.open(mode="a") as err:
-                err.write(f'{code}: could not be fetched from pdb database')
+            with errors.open(mode='a') as err:
+                err.write(f'{code}: could not be fetched from pdb database. Status code: {request.status_code}')
