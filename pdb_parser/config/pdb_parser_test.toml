@@ -1,0 +1,3 @@
+[paths]
+pdb_files = "pdb_files_test"
+register = "register_test"

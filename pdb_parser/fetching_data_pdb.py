@@ -14,12 +14,14 @@ def listing_codes(list_of_codes, paths, error_file='register.txt'):
             line = line.strip('\n')
 
             if len(line) > 4:
+
                 with errors.open(mode="x") as err:
                     err.write(f'{line}: exceeds standard length for pdb code')
+
                 continue
             else:
                 pdb_codes.append(line)
-
+    print(pdb_codes)
     return pdb_codes
 
 
